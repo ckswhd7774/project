@@ -22,6 +22,7 @@ services:
       - ./static:/static
     depends_on:
       - prod
+      - prod2
 
   prod:
     container_name: prod
@@ -34,3 +35,14 @@ services:
       - .:/django/
     ports:
       - "8000:8000"
+  prod2:
+    container_name: prod2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    command: sh -c "gunicorn config.wsgi:application --bind 0.0.0.0:9000"
+    volumes:
+      - .:/django/
+      ports:
+      - "9000:9000"

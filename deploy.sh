@@ -1,8 +1,3 @@
-CMD_CONNECT='ssh -i ~/.ssh/fss.pem ubuntu@13.124.59.103'
+ssh -i ~/.ssh/fss.pem ubuntu@3.37.200.120 'cd /home/ubuntu/test/test/test/; bash deploy.sh;'
+echo "Start one"
 echo "Start Deploy"
-git add .
-git commit -m "test"
-git pull origin master
-git push origin master
-echo docker-compose up --build -d nginx
-echo sudo docker-compose up
