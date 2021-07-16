@@ -1,10 +1,3 @@
-ssh -i ~/.ssh/fss.pem ubuntu@13.124.59.103
+ssh -i ~/.ssh/fss.pem ubuntu@3.37.200.120 'cd /home/ubuntu/test/test/test/; bash deploy.sh;'
 
 echo "Start Deploy"
-sudo git pull origin master
-
-echo 'down old version'
-sudo docker-compose down
-
-echo 'up new version'
-sudo docker-compose up --build -d nginx
