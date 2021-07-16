@@ -35,7 +35,7 @@ services:
       - .:/django/
     ports:
       - "8000:8000"
-
+      
   prod2:
       container_name: prod2
       build:
